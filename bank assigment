@@ -1,0 +1,63 @@
+package Concepts;
+
+import java.util.Scanner;
+
+class Bank {
+	int accNo, bal;
+
+	Bank(int a, int b) {
+		accNo = a;
+		bal = b;
+	}
+
+	public void deposite() {
+		int Damt;
+
+		System.out.println("ENTER THE DEPOSIT AMOUNT: ");
+		Scanner input = new Scanner(System.in);
+		Damt = input.nextInt();
+		bal = bal + Damt;
+
+	}
+
+	public void withdraw() {
+		int WD;
+
+		System.out.println("ENTER THE AMOUNT TO BE WITHDRAWN: ");
+		Scanner in = new Scanner(System.in);
+		WD = in.nextInt();
+		bal = bal - WD;
+	}
+
+	public void display() {
+		int c;
+
+		System.out.println("YOUR ACCOUNT DETAILS ARE: ");
+		System.out.println("Account No: " + accNo);
+		System.out.println("Press 1 to see balance");
+		Scanner i = new Scanner(System.in);
+		c = i.nextInt();
+
+		if (c == 1) {
+			System.out.println("BALANCE IS: " + bal);
+		} else {
+			System.out.println("THANKYOU");
+		}
+
+	}
+}
+
+public class Constructor {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Bank b1 = new Bank(260985055, 0);
+
+		b1.deposite();
+		System.out.println();
+		b1.withdraw();
+		System.out.println();
+		b1.display();
+	}
+
+}
